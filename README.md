@@ -13,7 +13,7 @@ var person = {
   age: 21,
   bio: function() {
     alert('I'm Bob');
-  }
+  };
 };
 ```
 
@@ -29,7 +29,7 @@ function Person(name, age) {
   this.interests = interests;
   this.bio: function() {
     alert('I'm Bob');
-  }
+  };
   };
 }
 

@@ -162,7 +162,6 @@ grandChild.print(); // "JrJr."
 ```
 
 ## `Call`
-Call is like calling `super.init` in Swift 
 ```javascript
 function Product(name, price) {
   this.name = name;
@@ -182,7 +181,43 @@ function Toy(name, price) {
 var cheese = new Food('feta', 5);
 var fun = new Toy('robot', 40);
 ```
+Another example of `call`
 
+```javascript
+function greet() {
+  var reply = [this.person, 'is a', this.role].join(' ');
+  console.log(reply);
+}
+
+var i = {
+  person: 'Bob', 
+  role: 'Javascript Developer'
+};
+
+greet.call(i); // Bob is a Javascript Developer
+```
+
+## `Apply()`
+> `apply` is very similar to `call()`, except for the type of arguments it supports. You use an arguments array instead of a list of arguments (parameters). With `apply`, you can also use an `array` literal, for example, `func.apply(this, ['eat', 'bananas'])`, or an `Array` object, for example, `func.apply(this, new Array('eat', 'bananas'))`.
+```javascript 
+```
+
+## `Bind()`
+```javascript
+this.x = 9;    // this refers to global "window" object here in the browser
+var module = {
+  x: 81,
+  getX: function() { return this.x; }
+};
+
+module.getX(); // 81
+
+var retrieveX = module.getX;
+retrieveX();   
+// returns 9 - The function gets invoked at the global scope
+var boundGetX = retrieveX.bind(module);
+boundGetX(); // 81
+```
 
 
 #### Need to Study More
@@ -226,3 +261,4 @@ Here `Point` is a constructor function, it builds an object (data structure) pro
   - https://www.thecodeship.com/web-development/methods-within-constructor-vs-prototype-in-javascript/
   - https://www.sitepoint.com/simple-inheritance-javascript/
   - http://archive.oreilly.com/oreillyschool/courses/advancedjavascript/Advanced%20JavaScript%20Essentials%20v1.pdf
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply

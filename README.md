@@ -32,11 +32,11 @@ var bob = new Person('Bob', 20);
 ### Third Way to Create Object
 ```javascript 
 // Create Object
-var person1 = new Object();
+var person = new Object();
 
-person1.name = 'Bob';
-person1['age'] = 21;
-person1.greeting = function() {
+person.name = 'Bob';
+person['age'] = 21;
+person.greeting = function() {
   consoloe.log("Hi, I'm Bob");
 };
 ```
@@ -44,7 +44,7 @@ person1.greeting = function() {
 ### Fourth Way to Create Object 
 ```javascript 
 // Create Object
-var person1 = new Object({
+var person = new Object({
   name: 'Bob',
   age: 21,
   greeting: function() {
@@ -56,10 +56,10 @@ var person1 = new Object({
 ### Fifth Way to Create Object 
 ```swift
 // Create Object
-var person2 = Object.create(person1); // inheritance
+var newPerson = Object.create(person); // inheritance
 
-person2.name
-person2.greeting() // "Hi, I'm Bob"
+newPerson.name
+newPerson.greeting() // "Hi, I'm Bob"
 ```
 
 
@@ -79,7 +79,6 @@ Person.prototype.introduce = function() {
 
 // Create Object
 let bob = Person("Bob", 21)
-
 bob.greet() // "Hi, I'm Bob"
 bob.introduce() // "Hi, I'm Bob"
 ```
@@ -93,7 +92,7 @@ var Parent = function() {
     this.name = "Paremt";
 }
 
-ClassA.prototype.print = function() {
+Parent.prototype.print = function() {
     console.log(this.name);
 }
 

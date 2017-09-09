@@ -203,3 +203,4 @@ Here `Point` is a constructor function, it builds an object (data structure) pro
   - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
   - https://www.thecodeship.com/web-development/methods-within-constructor-vs-prototype-in-javascript/
   - https://www.sitepoint.com/simple-inheritance-javascript/
+  - http://archive.oreilly.com/oreillyschool/courses/advancedjavascript/Advanced%20JavaScript%20Essentials%20v1.pdf

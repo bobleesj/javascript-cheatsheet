@@ -77,7 +77,14 @@ car cars = {
 var toyota = Object.create (cars); // now toyota inherits the properties from cars
 console.log(toyota.type); // sedan
 ```
-
+### Another Inheritance 
+```javascript 
+ function inheritPrototype(childObject, parentObject) {
+    var copyOfParent = Object.create(parentObject.prototype);
+    copyOfParent.constructor = childObject;
+   childObject.prototype = copyOfParent;
+}
+```
 
 
 ### The primitive data type String is stored as a value

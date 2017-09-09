@@ -9,22 +9,17 @@ Study Materials:
 ### First Way to Create Object 
 ```javascript 
 var person = {
-  name: ['Bob', 'Smith'],
-  age: 32,
-  gender: 'male',
-  interests: ['music', 'skiing'],
+  name: 'Bob',
+  age: 21,
   bio: function() {
-    alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
-  },
-  greeting: function() {
-    alert('Hi! I\'m ' + this.name[0] + '.');
+    alert('I'm Bob');
   }
 };
 ```
 
 ### Second Way to Create Object 
 ```javascript 
-function Person(first, last, age, gender, interests) {
+function Person(name, age) {
   this.name = {
     first,
     last
@@ -32,34 +27,32 @@ function Person(first, last, age, gender, interests) {
   this.age = age;
   this.gender = gender;
   this.interests = interests;
-  this.bio = function() {
-    alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
-  };
-  this.greeting = function() {
-    alert('Hi! I\'m ' + this.name.first + '.');
+  this.bio: function() {
+    alert('I'm Bob');
+  }
   };
 }
 
-var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+var bob = new Person('Bob', 20);
 ```
 
 ### Third Way to Create Object
 ```javascript 
 var person1 = new Object();
-person1.name = 'Chris';
-person1['age'] = 38;
+person1.name = 'Bob';
+person1['age'] = 21;
 person1.greeting = function() {
-  alert('Hi! I\'m ' + this.name + '.');
+  consoloe.log("Hi, I'm Bob");
 };
 ```
 
 ### Fourth Way to Create Object 
 ```javascript 
 var person1 = new Object({
-  name: 'Chris',
-  age: 38,
+  name: 'Bob',
+  age: 21,
   greeting: function() {
-    alert('Hi! I\'m ' + this.name + '.');
+    consoloe.log("Hi, I'm Bob");
   }
 });
 ```

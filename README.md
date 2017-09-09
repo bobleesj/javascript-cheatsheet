@@ -1,5 +1,5 @@
-# object-oriented-javascript
-Mastering Javascript OOP
+# Object Oriented Javascript
+## Mastering Javascript OOP
 
 Study Materials: 
   - http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/

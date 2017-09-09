@@ -2,97 +2,73 @@
 Mastering Javascript OOP
 
 Study Materials: 
-http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/
+  - http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/
+  - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
+  
 
-
-### Every javascript funciton has a prototype property
-
+### First Way to Create Object 
 ```javascript 
-function PrintStuff (myDocuments) {
- this.documents = myDocuments;
-}  
-```
-
-
-```javascript 
-PrintStuff.prototype.print = function() {
-  console.log(this.documents);
-}
-```
-
-Create an object 
-
-```javascript 
-var newObj = new PrintStuff("I am a new Object and I can print.");
-```
-
-```javascript 
-newObj.print()
-```
-
-### Implementing of Comibation Constructor/Prototype Pattern'
-
-```javascript
-function User (theName, theEmail) {
-    this.name = theName;
-    this.email = theEmail;
-    this.quizScores = [];
-    this.currentScore = 0;
-}
-```
-
-```javascript
-User.prototype = {
-    constructor: User,
-    saveScore:function (theScoreToAdd)  {
-        this.quizScores.push(theScoreToAdd)
-    },
-    showNameAndScores:function ()  {
-        var scores = this.quizScores.length > 0 ? this.quizScores.join(",") : "No Scores Yet";
-        return this.name + " Scores: " + scores;
-    },
-    changeEmail:function (newEmail)  {
-        this.email = newEmail;
-        return "New Email Saved: " + this.email;
-    }
-}
-```
-
-```javascript
-firstUser = new User("Richard", "Richard@examnple.com"); 
-firstUser.changeEmail("RichardB@examnple.com");
-firstUser.saveScore(15);
-```
-
-
-### Inheritance 
-```javascript 
-car cars = {
-    type:"sedan",
-    wheels:4
+var person = {
+  name: ['Bob', 'Smith'],
+  age: 32,
+  gender: 'male',
+  interests: ['music', 'skiing'],
+  bio: function() {
+    alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+  },
+  greeting: function() {
+    alert('Hi! I\'m ' + this.name[0] + '.');
+  }
 };
 ```
 
-```javascript
-var toyota = Object.create (cars); // now toyota inherits the properties from cars
-console.log(toyota.type); // sedan
-```
-### Another Inheritance 
+### Second Way to Create Object 
 ```javascript 
- function inheritPrototype(childObject, parentObject) {
-    var copyOfParent = Object.create(parentObject.prototype);
-    copyOfParent.constructor = childObject;
-   childObject.prototype = copyOfParent;
+function Person(first, last, age, gender, interests) {
+  this.name = {
+    first,
+    last
+  };
+  this.age = age;
+  this.gender = gender;
+  this.interests = interests;
+  this.bio = function() {
+    alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+  };
+  this.greeting = function() {
+    alert('Hi! I\'m ' + this.name.first + '.');
+  };
 }
+
+var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+```
+
+### Third Way to Create Object
+```javascript 
+var person1 = new Object();
+person1.name = 'Chris';
+person1['age'] = 38;
+person1.greeting = function() {
+  alert('Hi! I\'m ' + this.name + '.');
+};
+```
+
+### Fourth Way to Create Object 
+```javascript 
+var person1 = new Object({
+  name: 'Chris',
+  age: 38,
+  greeting: function() {
+    alert('Hi! I\'m ' + this.name + '.');
+  }
+});
+```
+
+### Fitfh Way to Create Object 
+```swift
+var person2 = Object.create(person1); // inheritance
+person2.name
+person2.greeting()
 ```
 
 
-### The primitive data type String is stored as a value
-```javascript
-var person = "Kobe";  
-var anotherPerson = person; // anotherPerson = the value of person
-person = "Bryant"; // value of person changed
-
-console.log(anotherPerson); // Kobe
-console.log(person); // Bryant
-```

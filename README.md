@@ -163,6 +163,41 @@ grandChild.print(); // "JrJr."
 
 
 
+#### Need to Study More
+
+> __proto__ is the actual object that is used in the lookup chain to resolve methods, etc. prototype is the object that is used to build __proto__ when you create an object with new:
+
+```javascript 
+( new Foo ).__proto__ === Foo.prototype
+( new Foo ).prototype === undefined
+```
+
+``prototype` is a property of a Function object. It is the prototype of objects constructed by that function.
+
+
+```javascript
+function Point(x, y) {
+    this.x = x;
+    this.y = y;
+}
+
+var myPoint = new Point();
+
+// the following are all true
+myPoint.__proto__ == Point.prototype
+myPoint.__proto__.__proto__ == Object.prototype
+myPoint instanceof Point;
+myPoint instanceof Object;
+```
+
+Here `Point` is a constructor function, it builds an object (data structure) procedurally. `myPoint` is an object constructed by `Point()` so `Point.prototype` gets saved to `myPoint.__proto__` at that time.
+
+
+
+
+
+
+
 #### Study Materials: 
   - http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/
   - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics

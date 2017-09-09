@@ -33,7 +33,7 @@ newObj.print()
 ### Implementing of Comibation Constructor/Prototype Pattern'
 
 ```javascript
-	function User (theName, theEmail) {
+function User (theName, theEmail) {
     this.name = theName;
     this.email = theEmail;
     this.quizScores = [];
@@ -42,7 +42,7 @@ newObj.print()
 ```
 
 ```javascript
-	User.prototype = {
+User.prototype = {
     constructor: User,
     saveScore:function (theScoreToAdd)  {
         this.quizScores.push(theScoreToAdd)
@@ -69,7 +69,7 @@ firstUser.saveScore(15);
 ```javascript 
 car cars = {
     type:"sedan",
-    wheels:4​
+    wheels:4
 };
 ```
 
@@ -80,11 +80,12 @@ console.log(toyota.type); // sedan
 
 
 
-### The primitive data type String is stored as a value​
+### The primitive data type String is stored as a value
+```javascript
 var person = "Kobe";  
-var anotherPerson = person; // anotherPerson = the value of person​
-person = "Bryant"; // value of person changed​
+var anotherPerson = person; // anotherPerson = the value of person
+person = "Bryant"; // value of person changed
 
 console.log(anotherPerson); // Kobe
 console.log(person); // Bryant
-
+```

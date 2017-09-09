@@ -12,7 +12,7 @@ var person = {
   name: 'Bob',
   age: 21,
   bio: function() {
-    alert('I'm Bob');
+    alert("I'm Bob");
   };
 };
 ```

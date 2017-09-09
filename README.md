@@ -1,10 +1,6 @@
 # Object Oriented Javascript
-## Mastering Javascript OOP
-
-Study Materials: 
-  - http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/
-  - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
-  - https://www.thecodeship.com/web-development/methods-within-constructor-vs-prototype-in-javascript/
+## Create Object 
+There are multiple ways to create an object in Javascript. 
 
 ### First Way to Create Object 
 ```javascript 
@@ -89,4 +85,87 @@ bob.introduce() // "Hi, I'm Bob"
 ```
 
 
+## Inheritance 
 
+### Design Parernt
+```javascript 
+var Parent = function() {
+    this.name = "Paremt";
+}
+
+ClassA.prototype.print = function() {
+    console.log(this.name);
+}
+
+var parent = new Parent();
+
+parent.print(); // "Parent"
+```
+
+## Design Child
+```javascript
+var Child = function() {
+    this.name = "Child";
+    this.initial = "Jr.";
+}
+```
+
+## Design Function
+```javascript
+var inheritsFrom = function (child, parent) {
+    child.prototype = Object.create(parent.prototype);
+};
+
+inheritsFrom(Child, Parent);
+```
+
+### Method Available 
+```javascript 
+var son  = new Child();
+son.print(); // "Child"
+```
+
+### Override Method
+```javascript 
+Child.prototype.print = function() {
+    Parent.prototype.print.call(this);
+    console.log(this.initial);
+}
+
+son.print() // "Jr."
+```
+
+### Child to Grand Child
+
+```javascript
+var GrandChild = function() {
+    this.name = "Grand Child";
+    this.initial = "JrJr.";
+}
+
+inheritsFrom(GrandChild, Child);
+```
+
+```javascript 
+GrandChild.prototype.dance = function() {
+  console.log("Let me dance for you, Bob")
+}
+
+GrandChild.prototype.print = function () {
+    Child.prototype.print.call(this);
+    console.log(this.initial);
+}
+```
+
+```javascript 
+var grandChild = new GrandChild();
+grandChild.print(); // "JrJr."
+```
+
+
+
+#### Study Materials: 
+  - http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/
+  - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
+  - https://www.thecodeship.com/web-development/methods-within-constructor-vs-prototype-in-javascript/
+  - https://www.sitepoint.com/simple-inheritance-javascript/

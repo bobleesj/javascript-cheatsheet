@@ -25,8 +25,6 @@ function Person(name, age) {
     last
   };
   this.age = age;
-  this.gender = gender;
-  this.interests = interests;
   this.bio: function() {
     alert("I'm Bob");
   };
@@ -39,6 +37,7 @@ var bob = new Person('Bob', 20);
 ### Third Way to Create Object
 ```javascript 
 var person1 = new Object();
+
 person1.name = 'Bob';
 person1['age'] = 21;
 person1.greeting = function() {

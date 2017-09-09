@@ -62,6 +62,25 @@ newPerson.name
 newPerson.greeting() // "Hi, I'm Bob"
 ```
 
+### Fifth and Half Way to Create Object 
+```javascript 
+function Animal(name) {
+    this.name = name;
+}
+
+Animal.prototype.sleep = function() {
+    console.log(this.name + ': Zzz...');
+}
+
+function Dog(name) {
+    this.name = name;
+}
+
+// Create a reference for the prototype
+Dog.prototype = Object.create(new Animal());
+```
+
+
 
 ### Sixth Way to Create Object 
 ```javascript 

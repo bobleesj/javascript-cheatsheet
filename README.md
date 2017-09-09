@@ -8,6 +8,7 @@ Study Materials:
 
 ### First Way to Create Object 
 ```javascript 
+// Create Object
 var person = {
   name: 'Bob',
   age: 21,
@@ -28,11 +29,13 @@ function Person(name, age) {
  };
 }
 
+// Create Object
 var bob = new Person('Bob', 20);
 ```
 
 ### Third Way to Create Object
 ```javascript 
+// Create Object
 var person1 = new Object();
 
 person1.name = 'Bob';
@@ -44,6 +47,7 @@ person1.greeting = function() {
 
 ### Fourth Way to Create Object 
 ```javascript 
+// Create Object
 var person1 = new Object({
   name: 'Bob',
   age: 21,
@@ -55,7 +59,9 @@ var person1 = new Object({
 
 ### Fifth Way to Create Object 
 ```swift
+// Create Object
 var person2 = Object.create(person1); // inheritance
+
 person2.name
 person2.greeting() // "Hi, I'm Bob"
 ```
@@ -75,7 +81,9 @@ Person.prototype.introduce = function() {
   console.log("Hi, I'm Bob")
 };
 
+// Create Object
 let bob = Person("Bob", 21)
+
 bob.greet() // "Hi, I'm Bob"
 bob.introduce() // "Hi, I'm Bob"
 ```

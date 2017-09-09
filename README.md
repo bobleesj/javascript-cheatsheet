@@ -28,9 +28,9 @@ function Person(name, age) {
   this.gender = gender;
   this.interests = interests;
   this.bio: function() {
-    alert('I'm Bob');
+    alert("I'm Bob");
   };
-  };
+ };
 }
 
 var bob = new Person('Bob', 20);

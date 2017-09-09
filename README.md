@@ -4,7 +4,7 @@ Mastering Javascript OOP
 Study Materials: 
   - http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/
   - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics
-  
+  - https://www.thecodeship.com/web-development/methods-within-constructor-vs-prototype-in-javascript/
 
 ### First Way to Create Object 
 ```javascript 
@@ -12,7 +12,7 @@ var person = {
   name: 'Bob',
   age: 21,
   bio: function() {
-    alert("I'm Bob");
+    consoloe.log("Hi, I'm Bob");
   };
 };
 ```
@@ -20,13 +20,10 @@ var person = {
 ### Second Way to Create Object 
 ```javascript 
 function Person(name, age) {
-  this.name = {
-    first,
-    last
-  };
+  this.name = name
   this.age = age;
   this.bio: function() {
-    alert("I'm Bob");
+    consoloe.log("Hi, I'm Bob");
   };
  };
 }
@@ -56,11 +53,32 @@ var person1 = new Object({
 });
 ```
 
-### Fitfh Way to Create Object 
+### Fifth Way to Create Object 
 ```swift
 var person2 = Object.create(person1); // inheritance
 person2.name
-person2.greeting()
+person2.greeting() // "Hi, I'm Bob"
 ```
+
+
+### Sixth Way to Create Object 
+```javascript 
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    this.greet = function() {
+      console.log("Hi, I'm Bob")
+    }
+};
+
+Person.prototype.introduce = function() {
+  console.log("Hi, I'm Bob")
+};
+
+let bob = Person("Bob", 21)
+bob.greet() // "Hi, I'm Bob"
+bob.introduce() // "Hi, I'm Bob"
+```
+
 
 
